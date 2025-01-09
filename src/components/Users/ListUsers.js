@@ -44,13 +44,7 @@ export const ListUsers = (props) => {
             })),
         [addCheckContact]
     )
-
-    //manejar los check 
-    // El problema radica en cómo estamos manejando los índices en la función handleCheckboxChange. 
-    // Al filtrar los contactos, los índices de la lista filtrada no coinciden con los índices originales en dataSelect.
-    //  Esto provoca que se actualicen los datos incorrectos en dataSelect.
-    // Para solucionar este problema, necesitamos identificar de manera única cada contacto (por ejemplo, usando un identificador único como Numero) 
-    // en lugar de confiar en los índices de la lista filtrada.
+    
     const handleCheckboxChange = (almacen) => {
         setDataSelect(prevData => prevData.map(item =>
             item.Almacén === almacen

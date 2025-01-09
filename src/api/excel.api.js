@@ -7,7 +7,6 @@ export const uploadFileExcel = async (file) => {
     formData.append('fileExcel', file)
     let data = {}
     try {
-        // const response = await fetch(`http://localhost:4000/api/excel/json`,{
         const response = await fetch(`${ENV.BASE_API}/${ENV.API_ROUTES.EXCEL_TO_JSON}`, {
             method: 'POST',
             body: formData

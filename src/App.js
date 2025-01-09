@@ -41,7 +41,7 @@ function App() {
     const fetchQrCode = async () => {
       try {
         const response = await fetch(`${ENV.BASE_API}/${ENV.API_ROUTES.QR_GENERATE}`)
-        // const response = await fetch('http://localhost:4000/api/qrcode')
+
         const data = await response.text(); //Obtener el HTML en formtato de texto
         setQrHtml(data)
       } catch (error) {
@@ -56,7 +56,6 @@ function App() {
   const handleSubmit = async (event) => {
     event.preventDefault();
 
-    //condicion para retorno vacio
     if (!file) {
       return
     }
@@ -117,7 +116,6 @@ function App() {
 
     if (file) {
       setFile(file);
-      // setAppStatus(APP_STATUS.READY_UPLOAD);
       showButtonExcel =true;
       buttonExcelDisable = false;
     }
@@ -130,7 +128,6 @@ function App() {
   }
 
   //Mostart el button
-  // const showButton = appStatus === APP_STATUS.READY_UPLOAD || appStatus === APP_STATUS.UPLOADING;
   const showQR = true
   
 
@@ -191,7 +188,6 @@ function App() {
               <form onSubmit={handleSubmitContact}>
                 <label >
                   <Input
-                    // disabled={appStatus === APP_STATUS.UPLOADING}
                     name='fileContact'
                     onChange={handleInputChangeContact}
                     type='file'
